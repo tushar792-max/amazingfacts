@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact Generator</h1>
+        <p id="fun-fact">Click the button to generate a fun fact!</p>
+        <button id="generate-button">Get a Fun Fact</button>
+    </div>
+    <script>
+        const funFacts = [
+            "Honey never spoils.",
+            "A group of flamingos is called a 'flamboyance'.",
+            "Bananas are berries, but strawberries aren't.",
+            "Octopuses have three hearts.",
+            "Wombat poop is cube-shaped.",
+            "A day on Venus is longer than a year on Venus.",
+            "The shortest war in history lasted 38 minutes.",
+            "Cows have best friends and get stressed when separated.",
+        ];
+
+        document.getElementById('generate-button').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * funFacts.length);
+            document.getElementById('fun-fact').textContent = funFacts[randomIndex];
+        });
+    </script>
+</body>
+</html>
